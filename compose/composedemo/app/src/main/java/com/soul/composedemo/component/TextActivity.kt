@@ -1,4 +1,4 @@
-package com.soul.composedemo
+package com.soul.composedemo.component
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
