@@ -47,3 +47,58 @@ void T1::main() {
     int ***z3 = &z2;
 
 }
+
+
+void fun1() {
+
+}
+
+void fun2() {
+
+}
+
+void fun3() {
+
+}
+
+void fun4() {
+
+}
+
+void fun5() {
+
+}
+
+int showLop(char *) {
+    return 1;
+}
+
+
+/**
+ * 函数指针
+ */
+void functionPointer() {
+    int (*showLopP)(char *) = showLop;
+    
+    showLopP("soul");
+
+    void (*funP[5])() = {fun1, fun2, fun3, fun4, fun5};
+
+    for (int i = 0; i < 5; ++i) {
+        (*funP[i])();
+//        funP[i]();//等价上面
+    }
+
+    for (const auto &item: funP) {
+        //* 取出指针的值 == 函数本；然后再调用函数本身
+        (*item)();
+//        item(); //等价上面
+    }
+
+    (*funP[0])();//执行顺序(....)[0] show4[0] 2、*  3、()
+
+    //总结
+    //1、声明 并 使用函数指针
+    //2、声明 并 使用 函数指针数组
+    //3、如果优先级相同时，会从左往右的顺序执行
+}

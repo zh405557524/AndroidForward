@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         Log.i(TAG, "student:$student")
         val createStudent = createStudent()
         Log.i(TAG, "createStudent:$createStudent")
+
     }
 
     /**

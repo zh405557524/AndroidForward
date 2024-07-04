@@ -9,8 +9,6 @@ pluginManagement {
         }
         mavenCentral()
         gradlePluginPortal()
-        maven { url = uri("https://jitpack.io") }
-
     }
 }
 dependencyResolutionManagement {
@@ -21,5 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "JNI"
+rootProject.name = "composedemo"
 include(":app")
+ 

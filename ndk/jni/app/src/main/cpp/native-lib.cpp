@@ -40,9 +40,12 @@ void commonChange(void *num1p, void *num2p, int len) {
         pb[i] = temp;
     }
 
+
+
 }
 
 extern "C" JNIEXPORT jstring
+
 JNICALL
 Java_com_soul_jni_MainActivity_stringFromJNI(
         JNIEnv *env,
@@ -54,11 +57,26 @@ Java_com_soul_jni_MainActivity_stringFromJNI(
     LOGI("呼唤前a:%d,b:%d", a, b);
     change(&a, &b);
 
+    int arr2[5][10] = {
+            {1,     2,     3,     4,    5,    6,    7},
+            {11, 22, 33, 44, 55, 66,                77,  88,  99},
+            {111,   222,   333,   444,  555,  666,  777, 888, 999},
+            {1111,  2222,  3333,  4444, 5555, 6666, 7777},
+            {11111, 22222, 33333, 44444}
+    };
+
+    LOGI("方式:%d", arr2[2][5])
+    LOGI("方式:%d", *((*(arr2 + 2)) + 5))
+    LOGI("方式:%d", arr2[2][5])
+
+
     return env->NewStringUTF(hello.c_str());
 }
 
 extern "C"
-JNIEXPORT jstring JNICALL
+JNIEXPORT jstring
+
+JNICALL
 Java_com_soul_jni_MainActivity_changeName(JNIEnv *env, jobject thiz, jstring name) {
     //1、获取修改对象
     jclass pJclass = env->GetObjectClass(thiz);
@@ -71,33 +89,48 @@ Java_com_soul_jni_MainActivity_changeName(JNIEnv *env, jobject thiz, jstring nam
     LOGI("fdsafd")
     return name;
 }
+
 extern "C"
 JNIEXPORT void JNICALL
-Java_com_soul_jni_MainActivity_setStudent(JNIEnv *env, jobject thiz, jobject student) {
-    //1、获取操作的对象
+Java_com_soul_jni_MainActivity_setStudent(JNIEnv
+                                          *env,
+                                          jobject thiz, jobject
+                                          student) {
+//1、获取操作的对象
     jclass _student = env->GetObjectClass(student);
-    //2、获取操作的方法
+//2、获取操作的方法
     jmethodID _setName = env->GetMethodID(_student, "setName", "(Ljava/lang/String;)V");
     jmethodID _setAge = env->GetMethodID(_student, "setAge", "(I)V");
-    //3、赋值
+//3、赋值
     jstring _name = env->NewStringUTF("soul");
-    env->CallVoidMethod(student, _setName, _name);
-    env->CallVoidMethod(student, _setAge, 33);
+    env->
+            CallVoidMethod(student, _setName, _name
+    );
+    env->
+            CallVoidMethod(student, _setAge,
+                           33);
 }
 
 extern "C"
-JNIEXPORT jobject JNICALL
-Java_com_soul_jni_MainActivity_createStudent(JNIEnv *env, jobject thiz) {
-    //1、找到class
+JNIEXPORT jobject
+JNICALL
+Java_com_soul_jni_MainActivity_createStudent(JNIEnv *env, jobject
+thiz) {
+//1、找到class
     jclass _studentClass = env->FindClass("com/soul/jni/Student");
-    //2、创建对象
+//2、创建对象
     jobject _student = env->AllocObject(_studentClass);
-    //3、获取操作的方法
+//3、获取操作的方法
     jmethodID _setName = env->GetMethodID(_studentClass, "setName", "(Ljava/lang/String;)V");
     jmethodID _setAge = env->GetMethodID(_studentClass, "setAge", "(I)V");
-    //4、赋值
+//4、赋值
     jstring _name = env->NewStringUTF("soul2");
-    env->CallVoidMethod(_student, _setName, _name);
-    env->CallVoidMethod(_student, _setAge, 34);
-    return _student;
+    env->
+            CallVoidMethod(_student, _setName, _name
+    );
+    env->
+            CallVoidMethod(_student, _setAge,
+                           34);
+    return
+            _student;
 }
