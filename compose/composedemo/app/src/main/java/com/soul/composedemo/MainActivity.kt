@@ -13,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.soul.composedemo.component.ButtonActivity
 import com.soul.composedemo.component.ImageActivity
 import com.soul.composedemo.component.TextActivity
 import com.soul.composedemo.ui.theme.ComposedemoTheme
@@ -31,7 +32,7 @@ class MainActivity : ComponentActivity() {
             Column(modifier = Modifier.padding(top = 48.dp)) {
                 ButtonWithAction("文字") { startActivity(TextActivity::class.java) }
                 ButtonWithAction("图片") { startActivity(ImageActivity::class.java) }
-
+                ButtonWithAction("按钮") { startActivity(ButtonActivity::class.java) }
             }
         }
     }

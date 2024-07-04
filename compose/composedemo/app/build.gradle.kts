@@ -49,6 +49,7 @@ android {
 
 dependencies {
 
+    implementation(files("libs/javalib-release.aar"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
