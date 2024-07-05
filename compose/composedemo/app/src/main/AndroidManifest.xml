@@ -46,6 +46,9 @@
         <activity
             android:name=".component.IconButtonActivity"
             android:exported="true" />
+        <activity
+            android:name=".component.DialogActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
