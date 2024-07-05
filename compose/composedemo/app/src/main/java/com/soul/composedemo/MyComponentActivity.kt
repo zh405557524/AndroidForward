@@ -6,10 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -23,27 +20,38 @@ import com.soul.composedemo.component.ImageActivity
 import com.soul.composedemo.component.SliderActivity
 import com.soul.composedemo.component.TextActivity
 import com.soul.composedemo.component.TextFieldActivity
-import com.soul.composedemo.condenser.BoxActivity
-import com.soul.composedemo.condenser.RowActivity
 import com.soul.composedemo.ui.theme.ButtonWithAction
-import com.soul.composedemo.ui.theme.ComposedemoTheme
 
-class MainActivity : ComponentActivity() {
+/**
+ * Description: 组件
+ * Author: 祝明
+ * CreateDate: 2024/7/5 15:35
+ * UpdateUser:
+ * UpdateDate: 2024/7/5 15:35
+ * UpdateRemark:
+ */
+class MyComponentActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent { Greeting() }
     }
 
-
     @Composable
-    fun Greeting() {
-        ComposedemoTheme(false, false) {
-            Column(modifier = Modifier.padding(top = 48.dp)) {
-                ButtonWithAction("基础组件") { startActivity(MyComponentActivity::class.java) }
-                ButtonWithAction("帧布局") { startActivity(BoxActivity::class.java) }
-                ButtonWithAction("横向列表") { startActivity(RowActivity::class.java) }
-            }
+    private fun Greeting() {
+        Column(
+            modifier = Modifier.padding(top = 48.dp)
+        ) {
+            ButtonWithAction("文字") { startActivity(TextActivity::class.java) }
+            ButtonWithAction("图片") { startActivity(ImageActivity::class.java) }
+            ButtonWithAction("按钮") { startActivity(ButtonActivity::class.java) }
+            ButtonWithAction("输入框") { startActivity(TextFieldActivity::class.java) }
+            ButtonWithAction("图标") { startActivity(IconActivity::class.java) }
+            ButtonWithAction("图标按钮") { startActivity(IconButtonActivity::class.java) }
+            ButtonWithAction("Dialog") { startActivity(DialogActivity::class.java) }
+            ButtonWithAction("卡牌") { startActivity(CardActivity::class.java) }
+            ButtonWithAction("滑块") { startActivity(SliderActivity::class.java) }
+            ButtonWithAction("悬浮按钮") { startActivity(FloatingActionButtonActivity::class.java) }
         }
     }
 
@@ -51,4 +59,3 @@ class MainActivity : ComponentActivity() {
         startActivity(Intent(this, classz))
     }
 }
-

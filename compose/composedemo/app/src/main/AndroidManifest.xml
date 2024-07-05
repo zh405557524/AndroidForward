@@ -55,6 +55,15 @@
         <activity
             android:name=".component.SliderActivity"
             android:exported="true" />
+        <activity
+            android:name=".component.FloatingActionButtonActivity"
+            android:exported="true" />
+        <activity
+            android:name=".condenser.BoxActivity"
+            android:exported="true" />
+        <activity
+            android:name=".condenser.RowActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
