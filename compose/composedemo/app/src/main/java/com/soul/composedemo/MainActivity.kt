@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.soul.composedemo.component.ButtonActivity
+import com.soul.composedemo.component.CardActivity
 import com.soul.composedemo.component.DialogActivity
 import com.soul.composedemo.component.IconActivity
 import com.soul.composedemo.component.IconButtonActivity
@@ -41,6 +42,7 @@ class MainActivity : ComponentActivity() {
                 ButtonWithAction("图标") { startActivity(IconActivity::class.java) }
                 ButtonWithAction("图标按钮") { startActivity(IconButtonActivity::class.java) }
                 ButtonWithAction("Dialog") { startActivity(DialogActivity::class.java) }
+                ButtonWithAction("卡牌") { startActivity(CardActivity::class.java) }
             }
         }
     }
