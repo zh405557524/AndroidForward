@@ -36,6 +36,9 @@
         <activity
             android:name=".component.ButtonActivity"
             android:exported="true" />
+        <activity
+            android:name=".component.TextFieldActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.dp
 import com.soul.composedemo.component.ButtonActivity
 import com.soul.composedemo.component.ImageActivity
 import com.soul.composedemo.component.TextActivity
+import com.soul.composedemo.component.TextFieldActivity
 import com.soul.composedemo.ui.theme.ComposedemoTheme
 
 class MainActivity : ComponentActivity() {
@@ -33,6 +34,7 @@ class MainActivity : ComponentActivity() {
                 ButtonWithAction("文字") { startActivity(TextActivity::class.java) }
                 ButtonWithAction("图片") { startActivity(ImageActivity::class.java) }
                 ButtonWithAction("按钮") { startActivity(ButtonActivity::class.java) }
+                ButtonWithAction("输入框") { startActivity(TextFieldActivity::class.java) }
             }
         }
     }
