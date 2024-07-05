@@ -48,7 +48,7 @@ class MainActivity : ComponentActivity() {
                 ButtonWithAction("横向列表") { startActivity(RowActivity::class.java) }
                 ButtonWithAction("竖向列表") { startActivity(ColumnActivity::class.java) }
                 ButtonWithAction("流式布局") { startActivity(FlowRowActivity::class.java) }
-                ButtonWithAction("抽屉布局") { startActivity(ScaffoldRowActivity::class.java) }
+                ButtonWithAction("整体布局") { startActivity(ScaffoldRowActivity::class.java) }
             }
         }
     }
