@@ -64,6 +64,9 @@
         <activity
             android:name=".condenser.RowActivity"
             android:exported="true" />
+        <activity
+            android:name=".condenser.ColumnActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
