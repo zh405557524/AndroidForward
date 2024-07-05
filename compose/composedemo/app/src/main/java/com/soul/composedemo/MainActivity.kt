@@ -25,7 +25,9 @@ import com.soul.composedemo.component.TextActivity
 import com.soul.composedemo.component.TextFieldActivity
 import com.soul.composedemo.condenser.BoxActivity
 import com.soul.composedemo.condenser.ColumnActivity
+import com.soul.composedemo.condenser.FlowRowActivity
 import com.soul.composedemo.condenser.RowActivity
+import com.soul.composedemo.condenser.ScaffoldRowActivity
 import com.soul.composedemo.ui.theme.ButtonWithAction
 import com.soul.composedemo.ui.theme.ComposedemoTheme
 
@@ -45,6 +47,8 @@ class MainActivity : ComponentActivity() {
                 ButtonWithAction("帧布局") { startActivity(BoxActivity::class.java) }
                 ButtonWithAction("横向列表") { startActivity(RowActivity::class.java) }
                 ButtonWithAction("竖向列表") { startActivity(ColumnActivity::class.java) }
+                ButtonWithAction("流式布局") { startActivity(FlowRowActivity::class.java) }
+                ButtonWithAction("抽屉布局") { startActivity(ScaffoldRowActivity::class.java) }
             }
         }
     }
