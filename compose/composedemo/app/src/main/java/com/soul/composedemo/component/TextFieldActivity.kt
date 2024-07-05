@@ -100,20 +100,3 @@ class TextFieldActivity : ComponentActivity() {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

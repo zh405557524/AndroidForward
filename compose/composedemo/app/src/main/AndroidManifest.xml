@@ -39,6 +39,10 @@
         <activity
             android:name=".component.TextFieldActivity"
             android:exported="true" />
+
+        <activity
+            android:name=".component.IconActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

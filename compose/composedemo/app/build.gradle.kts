@@ -58,7 +58,8 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
-    implementation(libs.coil.compose)
+    implementation(libs.coil.compose)//图片加载库
+    implementation(libs.icons.extended)//谷歌自带的图标
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
