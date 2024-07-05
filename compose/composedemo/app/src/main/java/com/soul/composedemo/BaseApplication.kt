@@ -16,6 +16,6 @@ class BaseApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        Global.init(this, BuildConfig.DEBUG)
+        Global.init(this, true)
     }
 }

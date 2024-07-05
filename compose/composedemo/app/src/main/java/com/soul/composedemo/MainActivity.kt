@@ -19,6 +19,7 @@ import com.soul.composedemo.component.DialogActivity
 import com.soul.composedemo.component.IconActivity
 import com.soul.composedemo.component.IconButtonActivity
 import com.soul.composedemo.component.ImageActivity
+import com.soul.composedemo.component.SliderActivity
 import com.soul.composedemo.component.TextActivity
 import com.soul.composedemo.component.TextFieldActivity
 import com.soul.composedemo.ui.theme.ComposedemoTheme
@@ -43,6 +44,7 @@ class MainActivity : ComponentActivity() {
                 ButtonWithAction("图标按钮") { startActivity(IconButtonActivity::class.java) }
                 ButtonWithAction("Dialog") { startActivity(DialogActivity::class.java) }
                 ButtonWithAction("卡牌") { startActivity(CardActivity::class.java) }
+                ButtonWithAction("滑块") { startActivity(SliderActivity::class.java) }
             }
         }
     }

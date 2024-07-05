@@ -52,6 +52,9 @@
         <activity
             android:name=".component.CardActivity"
             android:exported="true" />
+        <activity
+            android:name=".component.SliderActivity"
+            android:exported="true" />
     </application>
 
 </manifest>
