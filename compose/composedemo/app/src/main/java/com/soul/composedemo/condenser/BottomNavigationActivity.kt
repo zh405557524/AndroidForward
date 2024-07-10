@@ -34,6 +34,7 @@ class BottomNavigationActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent { Greeting() }
+
     }
 
     @Composable
@@ -50,10 +51,11 @@ class BottomNavigationActivity : ComponentActivity() {
                     }
                     Text(text = s)
                 }
-
             }
         }
     }
+
+
 }
 
 

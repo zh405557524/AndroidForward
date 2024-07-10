@@ -6,8 +6,12 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -27,6 +31,8 @@ import com.soul.composedemo.condenser.BottomNavigationActivity
 import com.soul.composedemo.condenser.BoxActivity
 import com.soul.composedemo.condenser.ColumnActivity
 import com.soul.composedemo.condenser.FlowRowActivity
+import com.soul.composedemo.condenser.ModalBottomActivity
+import com.soul.composedemo.condenser.PagerActivity
 import com.soul.composedemo.condenser.RowActivity
 import com.soul.composedemo.condenser.ScaffoldRowActivity
 import com.soul.composedemo.condenser.SpacerActivity
@@ -45,8 +51,15 @@ class MainActivity : ComponentActivity() {
 
     @Composable
     fun Greeting() {
+        // 创建滚动状态
+        val scrollState = rememberScrollState()
         ComposedemoTheme(false, false) {
-            Column(modifier = Modifier.padding(top = 48.dp)) {
+            Column(
+                modifier =
+                Modifier
+                    .padding(top = 48.dp)
+                    .verticalScroll(scrollState)
+            ) {
                 ButtonWithAction("基础组件") { startActivity(MyComponentActivity::class.java) }
                 ButtonWithAction("帧布局") { startActivity(BoxActivity::class.java) }
                 ButtonWithAction("横向列表") { startActivity(RowActivity::class.java) }
@@ -57,6 +70,9 @@ class MainActivity : ComponentActivity() {
                 ButtonWithAction("空白布局") { startActivity(SpacerActivity::class.java) }
                 ButtonWithAction("AppBar") { startActivity(TopAppBarActivity::class.java) }
                 ButtonWithAction("bottom") { startActivity(BottomNavigationActivity::class.java) }
+                ButtonWithAction("底部弹框") { startActivity(ModalBottomActivity::class.java) }
+                ButtonWithAction("Pager") { startActivity(PagerActivity::class.java) }
+                Spacer(Modifier.size(48.dp))
             }
         }
     }
