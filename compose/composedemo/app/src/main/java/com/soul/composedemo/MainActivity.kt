@@ -30,6 +30,7 @@ import com.soul.composedemo.condenser.RowActivity
 import com.soul.composedemo.condenser.ScaffoldRowActivity
 import com.soul.composedemo.condenser.SpacerActivity
 import com.soul.composedemo.condenser.SurfaceRowActivity
+import com.soul.composedemo.condenser.TopAppBarActivity
 import com.soul.composedemo.ui.theme.ButtonWithAction
 import com.soul.composedemo.ui.theme.ComposedemoTheme
 
@@ -53,6 +54,7 @@ class MainActivity : ComponentActivity() {
                 ButtonWithAction("整体布局") { startActivity(ScaffoldRowActivity::class.java) }
                 ButtonWithAction("Surface") { startActivity(SurfaceRowActivity::class.java) }
                 ButtonWithAction("空白布局") { startActivity(SpacerActivity::class.java) }
+                ButtonWithAction("AppBar") { startActivity(TopAppBarActivity::class.java) }
             }
         }
     }
