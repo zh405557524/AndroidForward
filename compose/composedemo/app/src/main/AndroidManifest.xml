@@ -74,6 +74,13 @@
             android:name=".condenser.ScaffoldRowActivity"
             android:exported="true" />
 
+         <activity
+            android:name=".condenser.SurfaceRowActivity"
+            android:exported="true" />
+        <activity
+            android:name=".condenser.SpacerActivity"
+            android:exported="true" />
+
 
     </application>
 
