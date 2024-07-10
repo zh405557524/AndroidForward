@@ -23,6 +23,7 @@ import com.soul.composedemo.component.ImageActivity
 import com.soul.composedemo.component.SliderActivity
 import com.soul.composedemo.component.TextActivity
 import com.soul.composedemo.component.TextFieldActivity
+import com.soul.composedemo.condenser.BottomNavigationActivity
 import com.soul.composedemo.condenser.BoxActivity
 import com.soul.composedemo.condenser.ColumnActivity
 import com.soul.composedemo.condenser.FlowRowActivity
@@ -55,6 +56,7 @@ class MainActivity : ComponentActivity() {
                 ButtonWithAction("Surface") { startActivity(SurfaceRowActivity::class.java) }
                 ButtonWithAction("空白布局") { startActivity(SpacerActivity::class.java) }
                 ButtonWithAction("AppBar") { startActivity(TopAppBarActivity::class.java) }
+                ButtonWithAction("bottom") { startActivity(BottomNavigationActivity::class.java) }
             }
         }
     }

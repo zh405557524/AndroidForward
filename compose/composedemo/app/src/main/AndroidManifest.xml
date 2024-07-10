@@ -84,6 +84,10 @@
             android:name=".condenser.TopAppBarActivity"
             android:exported="true" />
 
+   <activity
+            android:name=".condenser.BottomNavigationActivity"
+            android:exported="true" />
+
 
     </application>
 
