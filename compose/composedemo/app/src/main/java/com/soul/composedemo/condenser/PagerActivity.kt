@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -42,6 +43,7 @@ class PagerActivity : ComponentActivity() {
             state = pagerState,
             modifier = Modifier
                 .fillMaxWidth()
+                .fillMaxHeight()
                 .padding(top = 48.dp)
         ) { page ->
             // 每一页的内容，比如显示个文本

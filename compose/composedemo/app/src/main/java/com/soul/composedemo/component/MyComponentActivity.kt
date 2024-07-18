@@ -1,4 +1,4 @@
-package com.soul.composedemo
+package com.soul.composedemo.component
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,16 +10,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.soul.composedemo.component.ButtonActivity
-import com.soul.composedemo.component.CardActivity
-import com.soul.composedemo.component.DialogActivity
-import com.soul.composedemo.component.FloatingActionButtonActivity
-import com.soul.composedemo.component.IconActivity
-import com.soul.composedemo.component.IconButtonActivity
-import com.soul.composedemo.component.ImageActivity
-import com.soul.composedemo.component.SliderActivity
-import com.soul.composedemo.component.TextActivity
-import com.soul.composedemo.component.TextFieldActivity
 import com.soul.composedemo.ui.theme.ButtonWithAction
 
 /**

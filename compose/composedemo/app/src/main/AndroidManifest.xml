@@ -67,31 +67,33 @@
         <activity
             android:name=".condenser.ColumnActivity"
             android:exported="true" />
-         <activity
+        <activity
             android:name=".condenser.FlowRowActivity"
             android:exported="true" />
-         <activity
+        <activity
             android:name=".condenser.ScaffoldRowActivity"
             android:exported="true" />
 
-         <activity
+        <activity
             android:name=".condenser.SurfaceRowActivity"
             android:exported="true" />
         <activity
             android:name=".condenser.SpacerActivity"
             android:exported="true" />
-   <activity
+        <activity
             android:name=".condenser.TopAppBarActivity"
             android:exported="true" />
-   <activity
+        <activity
             android:name=".condenser.BottomNavigationActivity"
             android:exported="true" />
-   <activity
+        <activity
             android:name=".condenser.ModalBottomActivity"
             android:exported="true" />
-   <activity
+        <activity
             android:name=".condenser.PagerActivity"
             android:exported="true" />
+
+        <activity android:name=".animation.AnimationVisibilityActivity" />
 
 
     </application>

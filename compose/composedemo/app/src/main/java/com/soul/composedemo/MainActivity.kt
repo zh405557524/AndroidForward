@@ -7,31 +7,21 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Button
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.soul.composedemo.component.ButtonActivity
-import com.soul.composedemo.component.CardActivity
-import com.soul.composedemo.component.DialogActivity
-import com.soul.composedemo.component.FloatingActionButtonActivity
-import com.soul.composedemo.component.IconActivity
-import com.soul.composedemo.component.IconButtonActivity
-import com.soul.composedemo.component.ImageActivity
-import com.soul.composedemo.component.SliderActivity
-import com.soul.composedemo.component.TextActivity
-import com.soul.composedemo.component.TextFieldActivity
+import com.soul.composedemo.animation.AnimationVisibilityActivity
+import com.soul.composedemo.component.MyComponentActivity
 import com.soul.composedemo.condenser.BottomNavigationActivity
 import com.soul.composedemo.condenser.BoxActivity
 import com.soul.composedemo.condenser.ColumnActivity
 import com.soul.composedemo.condenser.FlowRowActivity
 import com.soul.composedemo.condenser.ModalBottomActivity
+import com.soul.composedemo.condenser.MyCondenserActivity
 import com.soul.composedemo.condenser.PagerActivity
 import com.soul.composedemo.condenser.RowActivity
 import com.soul.composedemo.condenser.ScaffoldRowActivity
@@ -61,17 +51,9 @@ class MainActivity : ComponentActivity() {
                     .verticalScroll(scrollState)
             ) {
                 ButtonWithAction("基础组件") { startActivity(MyComponentActivity::class.java) }
-                ButtonWithAction("帧布局") { startActivity(BoxActivity::class.java) }
-                ButtonWithAction("横向列表") { startActivity(RowActivity::class.java) }
-                ButtonWithAction("竖向列表") { startActivity(ColumnActivity::class.java) }
-                ButtonWithAction("流式布局") { startActivity(FlowRowActivity::class.java) }
-                ButtonWithAction("整体布局") { startActivity(ScaffoldRowActivity::class.java) }
-                ButtonWithAction("Surface") { startActivity(SurfaceRowActivity::class.java) }
-                ButtonWithAction("空白布局") { startActivity(SpacerActivity::class.java) }
-                ButtonWithAction("AppBar") { startActivity(TopAppBarActivity::class.java) }
-                ButtonWithAction("bottom") { startActivity(BottomNavigationActivity::class.java) }
-                ButtonWithAction("底部弹框") { startActivity(ModalBottomActivity::class.java) }
-                ButtonWithAction("Pager") { startActivity(PagerActivity::class.java) }
+                ButtonWithAction("基础布局") { startActivity(MyCondenserActivity::class.java) }
+                ButtonWithAction("显示/隐藏的过渡动画") { startActivity(AnimationVisibilityActivity::class.java) }
+
                 Spacer(Modifier.size(48.dp))
             }
         }
