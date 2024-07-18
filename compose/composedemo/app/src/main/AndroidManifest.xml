@@ -95,6 +95,7 @@
 
         <activity android:name=".animation.AnimationVisibilityActivity" />
         <activity android:name=".animation.AnimateContentSizeActivity" />
+        <activity android:name=".animation.CrossfadeActivity" />
 
 
     </application>
