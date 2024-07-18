@@ -94,6 +94,7 @@
             android:exported="true" />
 
         <activity android:name=".animation.AnimationVisibilityActivity" />
+        <activity android:name=".animation.AnimateContentSizeActivity" />
 
 
     </application>

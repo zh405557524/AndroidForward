@@ -14,7 +14,9 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import com.soul.composedemo.animation.AnimateContentSizeActivity
 import com.soul.composedemo.animation.AnimationVisibilityActivity
+import com.soul.composedemo.animation.CrossfadeActivity
 import com.soul.composedemo.component.MyComponentActivity
 import com.soul.composedemo.condenser.BottomNavigationActivity
 import com.soul.composedemo.condenser.BoxActivity
@@ -53,6 +55,8 @@ class MainActivity : ComponentActivity() {
                 ButtonWithAction("基础组件") { startActivity(MyComponentActivity::class.java) }
                 ButtonWithAction("基础布局") { startActivity(MyCondenserActivity::class.java) }
                 ButtonWithAction("显示/隐藏的过渡动画") { startActivity(AnimationVisibilityActivity::class.java) }
+                ButtonWithAction("尺寸大小变化动画") { startActivity(AnimateContentSizeActivity::class.java) }
+                ButtonWithAction("淡入淡出的动画") { startActivity(CrossfadeActivity::class.java) }
 
                 Spacer(Modifier.size(48.dp))
             }

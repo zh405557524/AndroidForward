@@ -5,6 +5,11 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.animation.expandVertically
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.shrinkHorizontally
+import androidx.compose.animation.slideInVertically
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -51,7 +56,15 @@ class AnimationVisibilityActivity : ComponentActivity() {
             verticalArrangement = Arrangement.Center
         ) {
 
-            AnimatedVisibility(visible = state) {
+            AnimatedVisibility(visible = state,//显示隐藏
+                enter = slideInVertically(
+                    initialOffsetY = { -40 }
+                ) + expandVertically(
+                    expandFrom = Alignment.Top
+                ) + fadeIn(initialAlpha = 0.3f),//进入动画
+                exit = shrinkHorizontally() + fadeOut()//退出动画
+
+            ) {
                 Text(
                     text = "这是一个普通文本",
                     fontWeight = FontWeight.W900,
