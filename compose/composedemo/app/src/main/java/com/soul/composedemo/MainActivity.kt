@@ -19,6 +19,7 @@ import com.soul.composedemo.animation.AnimateContentSizeActivity
 import com.soul.composedemo.animation.AnimationVisibilityActivity
 import com.soul.composedemo.animation.AsStateActivity
 import com.soul.composedemo.animation.CrossfadeActivity
+import com.soul.composedemo.animation.UpdateTransitionActivity
 import com.soul.composedemo.component.MyComponentActivity
 import com.soul.composedemo.condenser.BottomNavigationActivity
 import com.soul.composedemo.condenser.BoxActivity
@@ -61,6 +62,7 @@ class MainActivity : ComponentActivity() {
                 ButtonWithAction("淡入淡出的动画") { startActivity(CrossfadeActivity::class.java) }
                 ButtonWithAction("单数值变化动画") { startActivity(AsStateActivity::class.java) }
                 ButtonWithAction("Animatable") { startActivity(AnimatableActivity::class.java) }
+                ButtonWithAction("updateTransition") { startActivity(UpdateTransitionActivity::class.java) }
 
                 Spacer(Modifier.size(48.dp))
             }
