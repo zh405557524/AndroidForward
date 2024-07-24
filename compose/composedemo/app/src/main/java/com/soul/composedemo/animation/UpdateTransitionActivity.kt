@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import androidx.compose.animation.animateColor
 import androidx.compose.animation.core.animateDp
 import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
@@ -15,12 +16,14 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.State
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
 /**
@@ -62,12 +65,10 @@ class UpdateTransitionActivity : ComponentActivity() {
                 BoxState.Collapsed -> 0.dp
                 BoxState.Expanded -> 200.dp
             }
-        }
-        Box(modifier = Modifier
-            .padding(top = 48.dp)
-            .size(rect)
-            .background(Color(0xFF0079D3))) {}
-
+        } //        Box(modifier = Modifier //            .padding(top = 48.dp)
+        //            .size(rect)
+        //            .background(Color(0xFF0079D3))) {}
+        AnimatingBox(currentState)
         Button(onClick = {
             currentState = when (currentState) {
                 BoxState.Collapsed -> BoxState.Expanded
@@ -81,6 +82,39 @@ class UpdateTransitionActivity : ComponentActivity() {
 
     private enum class BoxState {
         Collapsed, Expanded
+    }
+
+    private data class TransitionData(val color1: State<Color>, val size1: State<Dp>) {
+        val color by color1
+        val size by size1
+    }
+
+    @Composable
+    private fun AnimatingBox(boxState: BoxState) {
+        val transitionData = updateTransitionData(boxState)
+        Box(modifier = Modifier
+            .padding(16.dp)
+            .padding(top = 48.dp)
+            .size(transitionData.size)
+            .background(transitionData.color))
+    }
+
+    @Composable
+    private fun updateTransitionData(boxState: BoxState): TransitionData {
+        val transition = updateTransition(boxState)
+        val color = transition.animateColor(label = "") { state ->
+            when (state) {
+                BoxState.Collapsed -> Color(0xFF0079D3)
+                BoxState.Expanded -> Color(0xFF00D3A3)
+            }
+        }
+        val size = transition.animateDp(label = "") { state ->
+            when (state) {
+                BoxState.Collapsed -> 64.dp
+                BoxState.Expanded -> 128.dp
+            }
+        }
+        return TransitionData(color, size)
     }
 
 
