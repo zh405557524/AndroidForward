@@ -19,6 +19,7 @@ import com.soul.composedemo.animation.AnimateContentSizeActivity
 import com.soul.composedemo.animation.AnimationVisibilityActivity
 import com.soul.composedemo.animation.AsStateActivity
 import com.soul.composedemo.animation.CrossfadeActivity
+import com.soul.composedemo.animation.RememberInfiniteTransitionActivity
 import com.soul.composedemo.animation.UpdateTransitionActivity
 import com.soul.composedemo.component.MyComponentActivity
 import com.soul.composedemo.condenser.BottomNavigationActivity
@@ -45,16 +46,12 @@ class MainActivity : ComponentActivity() {
 
 
     @Composable
-    fun Greeting() {
-        // 创建滚动状态
+    fun Greeting() { // 创建滚动状态
         val scrollState = rememberScrollState()
         ComposedemoTheme(false, false) {
-            Column(
-                modifier =
-                Modifier
-                    .padding(top = 48.dp)
-                    .verticalScroll(scrollState)
-            ) {
+            Column(modifier = Modifier
+                .padding(top = 48.dp)
+                .verticalScroll(scrollState)) {
                 ButtonWithAction("基础组件") { startActivity(MyComponentActivity::class.java) }
                 ButtonWithAction("基础布局") { startActivity(MyCondenserActivity::class.java) }
                 ButtonWithAction("显示/隐藏的过渡动画") { startActivity(AnimationVisibilityActivity::class.java) }
@@ -63,6 +60,7 @@ class MainActivity : ComponentActivity() {
                 ButtonWithAction("单数值变化动画") { startActivity(AsStateActivity::class.java) }
                 ButtonWithAction("Animatable") { startActivity(AnimatableActivity::class.java) }
                 ButtonWithAction("updateTransition") { startActivity(UpdateTransitionActivity::class.java) }
+                ButtonWithAction("rememberInfiniteTransition") { startActivity(RememberInfiniteTransitionActivity::class.java) }
 
                 Spacer(Modifier.size(48.dp))
             }

@@ -46,6 +46,7 @@ class UpdateTransitionActivity : ComponentActivity() {
     private fun Greeting() {
 
         var currentState by remember { mutableStateOf(BoxState.Collapsed) }
+
         val transition = updateTransition(currentState)
 
         val rect by transition.animateDp(transitionSpec = {

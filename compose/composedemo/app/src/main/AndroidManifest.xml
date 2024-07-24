@@ -99,6 +99,7 @@
         <activity android:name=".animation.AsStateActivity" />
         <activity android:name=".animation.AnimatableActivity" />
         <activity android:name=".animation.UpdateTransitionActivity" />
+        <activity android:name=".animation.RememberInfiniteTransitionActivity" />
 
 
     </application>
