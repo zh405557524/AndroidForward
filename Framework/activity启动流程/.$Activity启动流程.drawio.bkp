@@ -1,0 +1,69 @@
+<mxfile host="Electron" modified="2024-09-25T06:28:56.265Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.2.5 Chrome/120.0.6099.109 Electron/28.1.0 Safari/537.36" etag="VQDYMFA-pdGmUpn2pnRi" version="24.2.5" type="device">
+  <diagram name="第 1 页" id="_mUhBq2on4v-ips0oYVc">
+    <mxGraphModel dx="1102" dy="769" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="fTNRuODIKIWIWRZW-S_n-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.009;entryY=0.069;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="fTNRuODIKIWIWRZW-S_n-1" target="fTNRuODIKIWIWRZW-S_n-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fTNRuODIKIWIWRZW-S_n-1" value="startAcitivity()" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="70" y="260" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fTNRuODIKIWIWRZW-S_n-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="fTNRuODIKIWIWRZW-S_n-3" target="fTNRuODIKIWIWRZW-S_n-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fTNRuODIKIWIWRZW-S_n-3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="350" y="260" width="150" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="fTNRuODIKIWIWRZW-S_n-23" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="fTNRuODIKIWIWRZW-S_n-5" target="fTNRuODIKIWIWRZW-S_n-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fTNRuODIKIWIWRZW-S_n-5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="560" y="255" width="140" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="fTNRuODIKIWIWRZW-S_n-6" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="770" y="255" width="320" height="450" as="geometry" />
+        </mxCell>
+        <mxCell id="fTNRuODIKIWIWRZW-S_n-7" value="ServicerManger" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="600" y="220" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fTNRuODIKIWIWRZW-S_n-8" value="ActivityTaskManagerProxy" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="395" y="220" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fTNRuODIKIWIWRZW-S_n-11" value="ActivityTaskManagerServicer" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="900" y="220" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fTNRuODIKIWIWRZW-S_n-12" value="startActivity()" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="800" y="290" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fTNRuODIKIWIWRZW-S_n-13" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="70" y="760" width="1020" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="fTNRuODIKIWIWRZW-S_n-14" value="zygote" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="590" y="760" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fTNRuODIKIWIWRZW-S_n-16" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.844;entryY=0.011;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="fTNRuODIKIWIWRZW-S_n-6" target="fTNRuODIKIWIWRZW-S_n-13">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="650" y="680" as="sourcePoint" />
+            <mxPoint x="700" y="630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fTNRuODIKIWIWRZW-S_n-18" value="&lt;font style=&quot;font-size: 14px;&quot;&gt;startProess()&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="fTNRuODIKIWIWRZW-S_n-16">
+          <mxGeometry x="-0.0852" y="-6" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fTNRuODIKIWIWRZW-S_n-17" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
+          <mxGeometry x="70" y="340" width="200" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="fTNRuODIKIWIWRZW-S_n-20" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.016;entryY=0.704;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="fTNRuODIKIWIWRZW-S_n-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="270" y="570" as="sourcePoint" />
+            <mxPoint x="630" y="590" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

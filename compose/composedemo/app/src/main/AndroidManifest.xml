@@ -100,6 +100,8 @@
         <activity android:name=".animation.AnimatableActivity" />
         <activity android:name=".animation.UpdateTransitionActivity" />
         <activity android:name=".animation.RememberInfiniteTransitionActivity" />
+        <activity android:name=".animation.AnimationActivity" />
+        <activity android:name=".gesture.ClickableActivity" />
 
 
     </application>

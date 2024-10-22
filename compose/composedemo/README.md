@@ -708,6 +708,136 @@ fun testButtonShowsProperly() {
 }
 ```
 
+## 7、动画
+
+### 1、显示隐藏动画
+> Compose 提供了一套用于创建动画的工具。你可以使用 animate*() 函数来创建动画。
+```kotlin
+@Composable fun AnimatedVisibilityExample() {
+    var visible by remember { mutableStateOf(true) }
+
+    Column {
+        Button(onClick = { visible = !visible }) {
+            Text("Toggle Visibility")
+        }
+        AnimatedVisibility(visible = visible) {
+            Text("Hello, World!")
+        }
+    }
+}
+```
+
+### 2、过渡动画
+> 过渡动画是一种在两个状态之间平滑过渡的动画。你可以使用 animate*AsState() 函数来创建过渡动画。
+```kotlin
+@Composable
+fun AnimatedContentExample() {
+    var state by remember { mutableStateOf(true) }
+
+    Column {
+        Button(onClick = { state = !state }) {
+            Text("Toggle Content")
+        }
+        AnimatedContent(targetState = state) { visible ->
+            if (visible) {
+                Text("Hello, World!")
+            } else {
+                Text("Goodbye, World!")
+            }
+        }
+    }
+}
+```
+###  3、自定义动画
+#### AnimationSpec
+> AnimationSpec 是一个用于定义动画的规范。你可以通过 tween、spring、keyframes 等函数来创建不同类型的动画。
+```kotlin
+val fadeIn = fadeIn(animationSpec = tween(1000))
+val fadeOut = fadeOut(animationSpec = tween(1000))
+val slideIn = slideIn(animationSpec = tween(1000))
+val slideOut = slideOut(animationSpec = tween(1000))
+```
+##### spring：创建一个弹簧动画。 可以比基于持续时间的 AnimationSpec 类型更顺利地处理中断，因为它保证了目标值在动画中变化时速度的连续性
+```kotlin
+val springSpec = spring(
+    dampingRatio = Spring.DampingRatioHighBouncy,
+    stiffness = Spring.StiffnessMedium
+)
+```
+##### tween：创建一个线性动画。tween 在指定的 durationMillis 上使用缓和曲线在开始和结束值之间进行动画
+```kotlin
+val tweenSpec = tween(
+    durationMillis = 1000,
+    delayMillis = 500,
+    easing = LinearOutSlowInEasing
+)
+```
+##### keyframes：的动画基于动画持续时间中不同时间戳指定的快照值。在任何时候，动画值将在两个 keyframes 值之间插值。
+对于这些 keyframes 中的每一个，可以指定 Easing 来决定插值曲线。
+```kotlin
+val value by animateFloatAsState(
+    targetValue = 1f,
+    animationSpec = keyframes {
+        durationMillis = 375
+        0.0f at 0 with LinearOutSlowInEasing
+        0.2f at 15 with FastOutLinearInEasing
+        0.4f at 75
+        0.4f at 225
+    }
+)
+```
+##### repeatable：创建一个重复动画。repeatable 会在指定的重复次数内重复动画。
+```kotlin
+val repeatableSpec = repeatable(
+    iterations = 3,
+    animation = tween(
+        durationMillis = 1000,
+        easing = LinearOutSlowInEasing
+    ),
+    repeatMode = RepeatMode.Reverse//从开始 RepeatMode.Restart ;从结束 RepeatMode.Reverse 开始重复。
+)
+```
+##### snap : 创建一个立即完成的动画。snap 会立即将值从开始值转换为结束值，而不会在动画中进行插值。
+```kotlin
+val value by animateFloatAsState(
+    targetValue = 1f,
+    animationSpec = snap(delayMillis = 50)
+)
+```
+##### Easing：Easing 是一个用于定义插值曲线的工具。
+你可以通过 LinearOutSlowInEasing、FastOutLinearInEasing 等函数来创建不同类型的插值曲线。
+```kotlin
+val CustomEasing = Easing { fraction -> fraction * fraction }
+
+@Composable
+fun EasingUsage() {
+    val value by animateFloatAsState(
+        targetValue = 1f,
+        animationSpec = tween(
+            durationMillis = 300,
+            easing = CustomEasing
+        )
+    )
+    // … …
+}
+```
+>Compose 提供了几个内置的 Easing 功能，涵盖了大多数使用情况。请参阅 Speed Material Design，了解更多关于根据你的情况使用何种 Easing 的信息。
+ FastOutSlowInEasing
+ LinearOutSlowInEasing
+ FastOutLinearEasing
+ LinearEasing
+ CubicBezierEasing
+
+##### AnimationVector : AnimationVector 是一个用于定义动画向量的工具。你可以通过 animateVectorAsState() 函数来创建动画向量。
+```kotlin
+val IntToVector: TwoWayConverter<Int, AnimationVector1D> =
+    TwoWayConverter({ AnimationVector1D(it.toFloat()) }, { it.value.toInt() })
+```
+
+
+
+
+
 
 
 
