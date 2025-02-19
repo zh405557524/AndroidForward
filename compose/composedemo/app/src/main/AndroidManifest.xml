@@ -103,6 +103,8 @@
         <activity android:name=".animation.AnimationActivity" />
         <activity android:name=".gesture.ClickableActivity" />
 
+        <activity android:name=".component.MyComponentActivity"/>
+        <activity android:name=".condenser.MyCondenserActivity"/>
 
     </application>
 
