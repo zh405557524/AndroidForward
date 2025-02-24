@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 main() {
   //1.变量
   Object name1 = 'name'; //与Java一样Object是所有类的基类，Object声明的变量可以是任意类型
@@ -90,6 +92,134 @@ main() {
       break;
   }
   var b3 = new Symbol("b");
-  print(#b ==b3); //true
+  print(#b == b3); //true
 
+  //4.操作符
+  //4.1 类型判断操作符
+  //as: 类型转换
+  var a7 = true;
+  print("a7 is String:${a7 as bool}"); //true
+  //is: 类型判断
+  var a8 = true;
+  print("a8 is String:${a8 is String}"); //false
+  //is!：非类型判断
+  var a9 = true;
+  print("a9 is not String:${a9 is! String}"); //true
+
+  //4.2 条件表达式
+  //condition ? expr1 : expr2 如果condition为true，执行expr1，否则执行expr2
+  var condition = true;
+  if (condition) {
+    print("true");
+  } else {
+    print("false");
+  }
+  //expr1 ?? expr2 如果expr1为null，执行expr2，否则执行expr1
+  var expr1 = null;
+  var expr2 = 2;
+  print(expr1 ?? expr2); //2
+  //4.3 级联操作符
+  //..可以在同一个对象上连续调用多个方法
+  var sb = StringBuffer();
+  sb
+    ..write("foo")
+    ..write("bar");
+  print(sb.toString()); //foobar
+  //4.4 空安全操作符
+  String? sb1;
+  print(sb1?.length); //null
+  //4.5 紧俏操作符
+  // !.如果对象为null，抛出异常
+  var sb2;
+  // print(sb2!.length); //抛出异常
+  var count = add3(1, 2);
+  count = add4(a: 1, b: 2);
+  count = add5();
+  print(count); //3
+  list.forEach((i) {
+    print("i:${i}");
+  });
+  //6 异常处理
+  try {
+    print(1 ~/ 0);
+  } on int catch (e) {
+  } catch (e, s) {
+    print(e);
+  }
+  var listArray = [3, 7, 2, 5, 9, 10, 34];
+  //写一个冒泡排序
+  bubbleSort(listArray);
+  print("冒泡排序:$listArray");
+  //选择排序
+  selectionSort(listArray);
+  print("选择排序:$listArray");
+  //插入排序
+}
+
+/**
+ * 选择排序
+ */
+void selectionSort(List<int> listArray) {
+  for (var i = 0; i < listArray.length - 1; i++) {
+    var minIndex = i;
+    for (var j = i + i; j < listArray.length; j++) {
+      if (listArray[j] < listArray[minIndex]) {
+        minIndex = j;
+      }
+    }
+    var temp = listArray[i];
+    listArray[i] = listArray[minIndex];
+    listArray[minIndex] = temp;
+  }
+}
+
+//5.函数/方法
+int add(int a, int b) {
+  return a + b;
+}
+
+add1(a, b) {
+  return a + b;
+}
+
+add2(a, b) => a + b; //箭头函数，在箭头 (=>) 和分号 (;) 之间只能使用一个 表达式
+
+//5.1一等方法对象
+//函数可以赋值给变量
+Function add3 = (int a, int b) {
+  return a + b;
+};
+//5.2 可选命令参数
+int add4({int? a, int? b}) {
+  if (a == null || b == null) {
+    return 0;
+  }
+  return a + b;
+}
+
+//5.3 默认参数值
+int add5({int a = 1, int b = 2}) {
+  return a + b;
+}
+
+//5.4 匿名方法
+var list = ['apples', 'oranges', 'grapes', 'bananas', 'plums'];
+// list.forEach((i) {
+// print(list[i]);
+// });
+
+/**
+ * 冒牌排序
+ */
+void bubbleSort(List list) {
+  //第一遍排序
+  for (var i = 0; i < list.length - 1; i++) {
+    for (var j = 0; j < list.length - 1 - i; j++) {
+      if (list[j] > list[j + 1]) {
+        var temp = list[j];
+        list[j] = list[j + 1];
+        list[j + 1] = temp;
+      }
+    }
+  }
 }
