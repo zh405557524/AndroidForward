@@ -15,6 +15,9 @@ main() {
   var p6 = Point5(1, 2);
   p6(3, 4);
   print(PChild().getMessage()); //输出 B
+
+  var f = Fraction(48, 24);
+  f.fractionOut();
 }
 
 //构造方法
@@ -197,3 +200,33 @@ class PChild extends P {}
 class AB extends P with A, B {}
 
 class BA extends P with B, A {}
+
+//作业:​	设计一个表示分数的类`Fraction`。这个类用两个int类型的变量分别表示分子和分母。这个类的构造函数是：`Fraction(num a, num b)`构造一个x/y的分数。这个类要提供以下的功能：
+//
+// - 将自己与另一个分数相加，产生一个新的Fraction的对象；
+// - 将自己和另一个分数相乘，产生一个新的Fraction的对象；
+// - 将自己以**分子/分母**的形式输出，如果分数是1/1，应该输出1；当分子大于分母时，不需要提出整数部分，即3/1是一个正确的输出；输出时需要为最简形式，如：2/4 应该是 1/2
+
+class Fraction {
+  var numberA;
+  var numberB;
+
+  Fraction(this.numberA, this.numberB);
+
+  Fraction operator +(Fraction other) {
+    return Fraction(numberA + other.numberA, numberB + other.numberB);
+  }
+
+  Fraction operator *(Fraction other) {
+    return Fraction(numberA * other.numberA, numberB * other.numberB);
+  }
+
+  void fractionOut() {
+    if (numberA % numberB == 0) {
+      print((numberA / numberB).toInt());
+    } else {
+      var fold = numberA % numberB;
+      print("${(numberA / fold).toInt()}/${(numberB / fold).toInt()}");
+    }
+  }
+}
