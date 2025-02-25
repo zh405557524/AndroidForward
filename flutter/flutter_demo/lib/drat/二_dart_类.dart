@@ -11,6 +11,10 @@ main() {
   var p5 = Point4(3, 4) + p4;
 
   print("${p5.x}+${p5.y}");
+
+  var p6 = Point5(1, 2);
+  p6(3, 4);
+  print(PChild().getMessage()); //输出 B
 }
 
 //构造方法
@@ -108,3 +112,88 @@ class Point4 {
 
   Point4(this.x, this.y);
 }
+
+//抽象类
+abstract class Animal {
+  void eat();
+}
+
+abstract class Parent {
+  String name;
+
+  Parent(this.name);
+
+  factory Parent.test(String name) {
+    return Child(name);
+  }
+
+  void printName();
+}
+
+class Child extends Parent {
+  Child(String name) : super(name);
+
+  @override
+  void eat() {}
+
+  @override
+  void printName() {}
+}
+
+//接口与继承的区别在于：
+//
+// 1、单继承，多实现。
+//
+// 2、继承可以有选择的重写父类方法并且可以使用`super`，实现强制重新定义接口所有成员。
+class Listener {
+  void onComplete() {}
+
+  void onFailure() {}
+}
+
+class MyListener implements Listener {
+  @override
+  void onComplete() {}
+
+  @override
+  void onFailure() {}
+}
+
+//可调用的类
+class Point5 {
+  late int x;
+  late int y;
+
+  Point5(this.x, this.y);
+
+  //可调用的类
+  call(int x, int y) {
+    return Point5(x, y);
+  }
+}
+//混合 mixins Mixins 是一种在多类继承中重用 一个类代码的方法
+
+mixin class A {
+  void a() {}
+
+  String getMessage() => 'A';
+}
+
+mixin class B {
+  void b() {}
+
+  String getMessage() => 'B';
+}
+
+// class C with A,B{
+//   void c(){}
+// }
+class P with A, B {
+  String getMessage() => 'P';
+}
+
+class PChild extends P {}
+
+class AB extends P with A, B {}
+
+class BA extends P with B, A {}
