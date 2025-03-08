@@ -188,6 +188,90 @@ flutter 的用法。
 ~~~
 
 
+## 三、异步编程
+### 3.1 isolate
+> isolate是Dart的并发模型，它不共享内存，不共享状态，不共享数据，通过消息传递的方式进行通信
+```dart
+ var receivePort = new ReceivePort();
+  Isolate.spawn(entryPoint, receivePort.sendPort);
+  receivePort.listen((t) {
+    print(t);
+  });
+~~~
+
+void entryPoint(SendPort sendPort) {
+  i = 200;
+  sendPort.send("Hello from entryPoint");
+}
+
+### 3.2 Future
+> Future是Dart中表示异步操作的结果，它是一个抽象类，它的实现类有Future、FutureOr、Completer、Stream、StreamController等
+```dart
+    Future.delayed(Duration(seconds: 3),(){
+        return "hello";
+    }).then((value){
+        print(value);
+    }).catchError((e){
+        print(e);
+    }).whenComplete((){
+        print("whenComplete");
+    });
+```
+### 3.3 stream
+> Stream是Dart中表示异步数据流的类，它是一个抽象类，它的实现类有Stream、StreamController、StreamSubscription等
+```dart
+    Stream.fromFutures([Future.value("hello"),Future.value("world")]).listen((event) {
+      print(event);
+    });
+```
+1. 多订阅
+```dart
+    StreamController<int> streamController = StreamController<int>();
+    Stream<int> stream = streamController.stream;
+    stream.listen((event) {
+      print("listen1:$event");
+    });
+    stream.listen((event) {
+      print("listen2:$event");
+    });
+    streamController.add(1);
+    streamController.add(2);
+
+    //转成广播流
+      Stream<List<int>> steam = new File(
+          r"D:\work\code\soul\AndroidForward\flutter\flutter_demo\lib\drat\a.txt")
+          .openRead();
+
+        var listen = steam.asBroadcastStream().listen((s) { //多订阅
+            //分段读取
+            print("stream:执行");
+            // dst.writeAsBytes(s, mode: FileMode.append);
+        });
+
+        var listen = steam.asBroadcastStream().listen((s) { //多订阅
+            //分段读取
+            print("stream:执行");
+            // dst.writeAsBytes(s, mode: FileMode.append);
+        });
+
+```
+### 3.4 async/await
+> async/await是Dart中用于处理异步操作的关键字，async用于标记一个函数是异步的，await用于等待一个异步操作完成
+```dart
+    void main() async{
+      print("start");
+      String result = await getNetworkData();
+      print(result);
+      print("end");
+    }
+
+    Future<String> getNetworkData() async{
+      return Future.delayed(Duration(seconds: 3),(){
+        return "network data";
+      });
+    }
+```
+
 
 
 
