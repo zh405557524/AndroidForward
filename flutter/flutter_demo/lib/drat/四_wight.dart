@@ -6,6 +6,7 @@ import '../wight/article_item.dart';
 main() => runApp(myAPP());
 
 class myAPP extends StatefulWidget {
+  //有状态的widget
   const myAPP({super.key});
 
   @override
