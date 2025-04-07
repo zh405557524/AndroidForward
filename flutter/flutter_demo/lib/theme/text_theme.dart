@@ -28,4 +28,28 @@ class CustomTextTheme {
   static Text gary_sp18(text) {
     return textView(text, fontSize: 18, color: ColorTheme.gray);
   }
+
+  static createBackgroundText(
+      String text,
+      double textSize,
+      Color? textColor, {
+        imageBackground,
+        width,
+        height,
+      }) {
+    return SizedBox(
+        width: width,
+        height: height,
+        child: Stack(
+          children: [
+            Positioned.fill(
+              child: Image(
+                image: imageBackground,
+                fit: BoxFit.fill,
+              ),
+            ),
+            Positioned.fill(child: Center(child: Text(text, style: TextStyle(fontSize: 12, color: textColor))))
+          ],
+        ));
+  }
 }

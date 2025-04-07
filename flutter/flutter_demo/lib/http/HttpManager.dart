@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_demo/http/Api.dart';
+import 'package:flutter_demo/utils/log_utils.dart';
 
 class HttpManager {
   late Dio _dio;
@@ -19,15 +20,15 @@ class HttpManager {
     _dio = Dio(options);
   }
 
-  request(String url,
-      {String method = "get", Map<String, dynamic>? params}) async {
+  request(String url, {String method = "get", Map<String, dynamic>? params}) async {
     try {
-      Response response = await _dio.request(url,
-          queryParameters: params, options: Options(method: method));
+      Response response = await _dio.request(url, queryParameters: params, options: Options(method: method));
       return response.data;
     } catch (e) {
-      print(e);
+      LogUtil.i("Http", "HttpManager request error: $e");
+
       return null;
     }
   }
 }
+
