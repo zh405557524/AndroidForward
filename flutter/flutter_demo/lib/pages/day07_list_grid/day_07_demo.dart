@@ -10,7 +10,7 @@ class Day07DemoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("Day07 Demo")),
+        appBar: AppBar(title: Text("Day 7 学习主题：ListView & GridView")),
       body:Center(
         child: Column(
           mainAxisAlignment:MainAxisAlignment.center,

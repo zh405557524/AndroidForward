@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_demo/pages/day06_flex_layout/flex_layout_page.dart';
 import 'package:flutter_demo/pages/day07_list_grid/day_07_demo.dart';
+import 'package:flutter_demo/pages/day08_custom_widgets/custom_widget_demo_page.dart';
 import 'package:flutter_demo/theme/button_theme.dart';
 
 void main() {
@@ -107,21 +108,24 @@ class _MyHomePageState extends State<MyHomePage> {
             // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
             // action in the IDE, or press "p" in the console), to see the
             // wireframe for each widget.
-            mainAxisAlignment:
-            MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
             spacing: 10,
             children: <Widget>[
               CustomButtonTheme.createButton(() {
                 Navigator.push(context, MaterialPageRoute(builder: (_) {
                   return FlexLayoutPage();
                 }));
-              }, text: "day06_flex_layout"),
-
+              }, text: "Day 6 - 弹性布局（Expanded & Flexible）"),
               CustomButtonTheme.createButton(() {
                 Navigator.push(context, MaterialPageRoute(builder: (_) {
                   return Day07DemoPage();
                 }));
-              }, text: "day07_flex_layout"),
+              }, text: "Day 7 学习主题：ListView & GridView"),
+              CustomButtonTheme.createButton(() {
+                Navigator.push(context, MaterialPageRoute(builder: (_) {
+                  return CustomWidgetDemoPage();
+                }));
+              }, text: "Day 8 学习主题：自定义组件"),
             ],
           ),
         );
