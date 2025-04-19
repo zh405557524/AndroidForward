@@ -1,4 +1,5 @@
-import 'package:flutter_demo/http/HttpManager.dart';
+
+import 'HttpManager.dart';
 
 class Api {
   static const String baseUrl = "http://www.wanandroid.com/";

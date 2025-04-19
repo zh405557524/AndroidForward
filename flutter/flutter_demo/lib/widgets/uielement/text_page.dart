@@ -12,7 +12,7 @@ class TextPage extends StatelessWidget {
           body: Column(
             children: [
               Text(
-                "Hello, this is a text page!",
+                "Hello, this is a text pages!",
                 style: TextStyle(fontSize: 24, color: Colors.blue),
                 textAlign: TextAlign.center, //对齐方式
                 maxLines: 2,

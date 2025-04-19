@@ -1,6 +1,8 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
-import '../page/login/view.dart';
+
+import '../../pages/login/view.dart';
+
 
 main() {
   runApp(MaterialApp(

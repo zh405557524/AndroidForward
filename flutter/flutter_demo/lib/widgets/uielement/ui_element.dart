@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_demo/wight/uielement/text_page.dart';
+import 'package:flutter_demo/widgets/uielement/text_page.dart';
 
 import 'button_page.dart';
 

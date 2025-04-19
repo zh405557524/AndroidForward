@@ -1,8 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_demo/http/Api.dart';
 
-import '../wight/article_item.dart';
-import '../wight/uielement/ui_element.dart';
+
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+import '../../widgets/article_item.dart';
+import '../../widgets/uielement/ui_element.dart';
+import '../http/Api.dart';
 
 main() => runApp(UIElementWight());
 

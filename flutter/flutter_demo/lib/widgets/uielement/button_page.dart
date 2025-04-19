@@ -9,6 +9,7 @@ class ButtonPage extends StatelessWidget {
         home: Column(
       children: [
         ElevatedButton(onPressed: () => {LogUtil.i("tag", "click1")}, child: Text("Elevated Button")),
+        TextButton(onPressed: () => {LogUtil.i("TAG", "click2")}, child: Text("Text Button"))
       ],
     ));
   }

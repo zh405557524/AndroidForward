@@ -1,6 +1,7 @@
-import 'package:flutter_demo/http/Api.dart';
 import 'package:flutter_demo/utils/log_utils.dart';
 import 'package:flutter_demo/utils/toast_util.dart';
+
+import '../../other/http/Api.dart';
 
 class LoginController {
   var username = "";
