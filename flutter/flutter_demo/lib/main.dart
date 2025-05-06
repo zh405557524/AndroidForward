@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_demo/pages/day06_flex_layout/flex_layout_page.dart';
 import 'package:flutter_demo/pages/day07_list_grid/day_07_demo.dart';
 import 'package:flutter_demo/pages/day08_custom_widgets/custom_widget_demo_page.dart';
+import 'package:flutter_demo/pages/day09_stack_card/stack_card_page.dart';
 import 'package:flutter_demo/theme/button_theme.dart';
 
 void main() {
@@ -126,6 +127,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   return CustomWidgetDemoPage();
                 }));
               }, text: "Day 8 学习主题：自定义组件"),
+              CustomButton(
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (_) {
+                    return StackCardPage();
+                  }));
+                },
+                text: 'Day 9 - 综合布局练习：Stack + Card + 图文混排',
+              )
             ],
           ),
         );
