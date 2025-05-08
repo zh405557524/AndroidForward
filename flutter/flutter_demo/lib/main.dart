@@ -4,6 +4,7 @@ import 'package:flutter_demo/pages/day07_list_grid/day_07_demo.dart';
 import 'package:flutter_demo/pages/day08_custom_widgets/custom_widget_demo_page.dart';
 import 'package:flutter_demo/pages/day09_stack_card/stack_card_page.dart';
 import 'package:flutter_demo/pages/day10_grid_cards/grid_cards_page.dart';
+import 'package:flutter_demo/pages/day11_custom_button/custom_button_demo_page.dart';
 import 'package:flutter_demo/theme/button_theme.dart';
 
 void main() {
@@ -96,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
         return Center(
           // Center is a layout widget. It takes a single child and positions it
           // in the middle of the parent.
-          child: Column(
+          child: ListView(
             // Column is also a layout widget. It takes a list of children and
             // arranges them vertically. By default, it sizes itself to fit its
             // children horizontally, and tries to be as tall as its parent.
@@ -110,24 +111,26 @@ class _MyHomePageState extends State<MyHomePage> {
             // TRY THIS: Invoke "debug painting" (choose the "Toggle Debug Paint"
             // action in the IDE, or press "p" in the console), to see the
             // wireframe for each widget.
-            mainAxisAlignment: MainAxisAlignment.center,
-            spacing: 10,
+            padding: const EdgeInsets.all(16),
             children: <Widget>[
               CustomButtonTheme.createButton(() {
                 Navigator.push(context, MaterialPageRoute(builder: (_) {
                   return FlexLayoutPage();
                 }));
               }, text: "Day 6 - 弹性布局（Expanded & Flexible）"),
+              SizedBox(height: 12),
               CustomButtonTheme.createButton(() {
                 Navigator.push(context, MaterialPageRoute(builder: (_) {
                   return Day07DemoPage();
                 }));
               }, text: "Day 7 学习主题：ListView & GridView"),
+              SizedBox(height: 12),
               CustomButtonTheme.createButton(() {
                 Navigator.push(context, MaterialPageRoute(builder: (_) {
                   return CustomWidgetDemoPage();
                 }));
               }, text: "Day 8 学习主题：自定义组件"),
+              SizedBox(height: 12),
               CustomButton(
                 onPressed: () {
                   Navigator.push(context, MaterialPageRoute(builder: (_) {
@@ -136,13 +139,22 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
                 text: 'Day 9 - 综合布局练习：Stack + Card + 图文混排',
               ),
+              SizedBox(height: 12),
               CustomButton(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (_) {
                       return GridCardsPage();
                     }));
                   },
-                  text: "Day 10 - 综合练习：构建图文宫格页面（GridView + 自定义卡片)")
+                  text: "Day 10 - 综合练习：构建图文宫格页面（GridView + 自定义卡片)"),
+              SizedBox(height: 12),
+              CustomButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) {
+                      return CustomButtonDemoPage();
+                    }));
+                  },
+                  text: "Day 11：封装通用按钮组件（CustomButton）")
             ],
           ),
         );
