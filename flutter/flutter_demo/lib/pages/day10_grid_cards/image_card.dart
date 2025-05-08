@@ -18,7 +18,8 @@ class ImageCard extends StatelessWidget {
         child: Column(
           children: [
             //顶部图片
-            Expanded(child: Image.network(imageUrl, width: double.infinity, fit: BoxFit.cover)), //底部标题
+            Expanded(child: Image.network(imageUrl, width: double.infinity, fit: BoxFit.cover)),
+            //底部标题
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(title,
