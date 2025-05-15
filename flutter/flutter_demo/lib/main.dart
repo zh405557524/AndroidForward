@@ -187,8 +187,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     Navigator.push(context, MaterialPageRoute(builder: (_) {
                       return WidgetLibraryDemoPage();
                     }));
-                  },Day 14 -组件库演示
-                  text: ""),
+                  },
+                  text: "Day 14 -组件库演示"),
             ],
           ),
         );
