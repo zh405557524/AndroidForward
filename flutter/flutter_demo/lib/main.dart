@@ -1,13 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_demo/pages/day06_flex_layout/flex_layout_page.dart';
 import 'package:flutter_demo/pages/day07_list_grid/day_07_demo.dart';
 import 'package:flutter_demo/pages/day08_custom_widgets/custom_widget_demo_page.dart';
 import 'package:flutter_demo/pages/day09_stack_card/stack_card_page.dart';
 import 'package:flutter_demo/pages/day10_grid_cards/grid_cards_page.dart';
 import 'package:flutter_demo/pages/day11_custom_button/custom_button_demo_page.dart';
+import 'package:flutter_demo/pages/day13_card_demo/card_demo_page.dart';
+import 'package:flutter_demo/pages/day14_widgets_demo/WidgetLibraryDemoPage.dart';
 import 'package:flutter_demo/theme/button_theme.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // 设置只支持竖屏（上下）
+  await SystemChrome.setPreferredOrientations([
+    DeviceOrientation.portraitUp,
+    DeviceOrientation.portraitDown,
+  ]);
+
   runApp(const MyApp());
 }
 
@@ -154,7 +164,31 @@ class _MyHomePageState extends State<MyHomePage> {
                       return CustomButtonDemoPage();
                     }));
                   },
-                  text: "Day 11：封装通用按钮组件（CustomButton）")
+                  text: "Day 11：封装通用按钮组件（CustomButton）"),
+              SizedBox(height: 12),
+              CustomButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) {
+                      return CustomButtonDemoPage();
+                    }));
+                  },
+                  text: "Day 12 - 标题与区块组件"),
+              SizedBox(height: 12),
+              CustomButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) {
+                      return CardDemoPage();
+                    }));
+                  },
+                  text: "Day 13 - 图文卡片封装"),
+              SizedBox(height: 12),
+              CustomButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) {
+                      return WidgetLibraryDemoPage();
+                    }));
+                  },Day 14 -组件库演示
+                  text: ""),
             ],
           ),
         );
