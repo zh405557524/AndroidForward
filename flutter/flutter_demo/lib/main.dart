@@ -8,6 +8,7 @@ import 'package:flutter_demo/pages/day10_grid_cards/grid_cards_page.dart';
 import 'package:flutter_demo/pages/day11_custom_button/custom_button_demo_page.dart';
 import 'package:flutter_demo/pages/day13_card_demo/card_demo_page.dart';
 import 'package:flutter_demo/pages/day14_widgets_demo/WidgetLibraryDemoPage.dart';
+import 'package:flutter_demo/pages/day15_counter/counter_page.dart';
 import 'package:flutter_demo/theme/button_theme.dart';
 
 void main() async {
@@ -189,6 +190,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     }));
                   },
                   text: "Day 14 -组件库演示"),
+              SizedBox(height: 12),
+              CustomButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) {
+                      return CounterPage();
+                    }));
+                  },
+                  text: "Day 15：状态管理入门"),
             ],
           ),
         );
