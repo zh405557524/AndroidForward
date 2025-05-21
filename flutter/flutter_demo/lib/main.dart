@@ -9,7 +9,11 @@ import 'package:flutter_demo/pages/day11_custom_button/custom_button_demo_page.d
 import 'package:flutter_demo/pages/day13_card_demo/card_demo_page.dart';
 import 'package:flutter_demo/pages/day14_widgets_demo/WidgetLibraryDemoPage.dart';
 import 'package:flutter_demo/pages/day15_counter/counter_page.dart';
+import 'package:flutter_demo/pages/day16_getx_counter/getx_counter_page.dart';
 import 'package:flutter_demo/theme/button_theme.dart';
+
+import 'demo/MyDesktopScaffold.dart';
+import 'demo/NavigationRailDemo.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -124,6 +128,15 @@ class _MyHomePageState extends State<MyHomePage> {
             // wireframe for each widget.
             padding: const EdgeInsets.all(16),
             children: <Widget>[
+              SizedBox(height: 12),
+              CustomButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) {
+                      return GetXCounterPage();
+                    }));
+                  },
+                  text: "Day 16 - GetX计数器"),
+              SizedBox(height: 12),
               CustomButtonTheme.createButton(() {
                 Navigator.push(context, MaterialPageRoute(builder: (_) {
                   return FlexLayoutPage();
@@ -198,6 +211,14 @@ class _MyHomePageState extends State<MyHomePage> {
                     }));
                   },
                   text: "Day 15：状态管理入门"),
+              SizedBox(height: 12),
+              CustomButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) {
+                      return NavigationRailDemo();
+                    }));
+                  },
+                  text: "NavigationRail 的作用与典型场景"),
             ],
           ),
         );
