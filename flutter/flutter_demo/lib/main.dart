@@ -10,7 +10,9 @@ import 'package:flutter_demo/pages/day13_card_demo/card_demo_page.dart';
 import 'package:flutter_demo/pages/day14_widgets_demo/WidgetLibraryDemoPage.dart';
 import 'package:flutter_demo/pages/day15_counter/counter_page.dart';
 import 'package:flutter_demo/pages/day16_getx_counter/getx_counter_page.dart';
+import 'package:flutter_demo/pages/day17_lifecycle_shared/main_counter_page.dart';
 import 'package:flutter_demo/theme/button_theme.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 import 'demo/MyDesktopScaffold.dart';
 import 'demo/NavigationRailDemo.dart';
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -128,6 +130,14 @@ class _MyHomePageState extends State<MyHomePage> {
             // wireframe for each widget.
             padding: const EdgeInsets.all(16),
             children: <Widget>[
+              SizedBox(height: 12),
+              CustomButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) {
+                      return MainCounterPage();
+                    }));
+                  },
+                  text: "Day 17 - GetX计数器-共享"),
               SizedBox(height: 12),
               CustomButton(
                   onPressed: () {
