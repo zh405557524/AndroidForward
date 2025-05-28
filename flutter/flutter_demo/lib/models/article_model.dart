@@ -1,10 +1,11 @@
 class Article {
-  final String title;
-  final String body;
+  final int id;
+   String title;
+   String body;
 
-  Article({required this.title, required this.body});
+  Article({required this.id, required this.title, required this.body});
 
   factory Article.fromJson(Map<String, dynamic> json) {
-    return Article(title: json['title'] ?? '', body: json['body'] ?? '');
+    return Article(id: json['id'], title: json['title'] ?? '', body: json['body'] ?? '');
   }
 }

@@ -12,6 +12,7 @@ import 'package:flutter_demo/pages/day15_counter/counter_page.dart';
 import 'package:flutter_demo/pages/day16_getx_counter/getx_counter_page.dart';
 import 'package:flutter_demo/pages/day17_lifecycle_shared/main_counter_page.dart';
 import 'package:flutter_demo/pages/day18_article_list/article_list_page.dart';
+import 'package:flutter_demo/pages/day19_shared_refresh/article_list_page.dart';
 import 'package:flutter_demo/theme/button_theme.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
@@ -132,6 +133,14 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: const EdgeInsets.all(16),
             children: <Widget>[
               SizedBox(height: 12),
+              CustomButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) {
+                      return ArticleListPage2();
+                    }));
+                  },
+                  text: "Day 19 - 页面共享状态 + 页面间刷新联动（GetX 实战）"),
+    SizedBox(height: 12),
               CustomButton(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (_) {
