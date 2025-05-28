@@ -38,6 +38,8 @@ dependencies:
   logger: 2.4.0
   fluttertoast: ^8.2.12
   get: ^4.6.6
+  easy_refresh: ^3.3.2
+  http: ^0.13.6
 #  banner_view_helper: ^0.0.1
 dev_dependencies:
   flutter_test:

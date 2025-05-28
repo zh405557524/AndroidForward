@@ -11,6 +11,7 @@ import 'package:flutter_demo/pages/day14_widgets_demo/WidgetLibraryDemoPage.dart
 import 'package:flutter_demo/pages/day15_counter/counter_page.dart';
 import 'package:flutter_demo/pages/day16_getx_counter/getx_counter_page.dart';
 import 'package:flutter_demo/pages/day17_lifecycle_shared/main_counter_page.dart';
+import 'package:flutter_demo/pages/day18_article_list/article_list_page.dart';
 import 'package:flutter_demo/theme/button_theme.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
@@ -130,6 +131,14 @@ class _MyHomePageState extends State<MyHomePage> {
             // wireframe for each widget.
             padding: const EdgeInsets.all(16),
             children: <Widget>[
+              SizedBox(height: 12),
+              CustomButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) {
+                      return ArticleListPage();
+                    }));
+                  },
+                  text: "Day 18 - 下拉刷新"),
               SizedBox(height: 12),
               CustomButton(
                   onPressed: () {
