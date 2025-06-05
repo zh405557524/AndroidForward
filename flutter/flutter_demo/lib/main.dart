@@ -20,6 +20,7 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 import 'demo/MyDesktopScaffold.dart';
 import 'demo/NavigationRailDemo.dart';
+import 'demo/serious_python_demo.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -134,6 +135,12 @@ class _MyHomePageState extends State<MyHomePage> {
             // wireframe for each widget.
             padding: const EdgeInsets.all(16),
             children: <Widget>[
+              SizedBox(height: 12),
+              CustomButton(
+                  onPressed: () {
+                    SeriousPythonDemo.runDemo();
+                  },
+                  text: "SeriousPythonDemo - Serious Python 演示"),
               SizedBox(height: 12),
               CustomButton(
                   onPressed: () {

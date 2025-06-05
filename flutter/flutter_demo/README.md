@@ -1769,6 +1769,8 @@ dependencies:
     path: ../my_local_package
 ```
 
+dart run serious_python:main package D:\temp\pydemo -p Windows
+
 
 
 
