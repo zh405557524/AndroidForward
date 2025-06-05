@@ -14,6 +14,7 @@ import 'package:flutter_demo/pages/day17_lifecycle_shared/main_counter_page.dart
 import 'package:flutter_demo/pages/day18_article_list/article_list_page.dart';
 import 'package:flutter_demo/pages/day19_shared_refresh/article_list_page.dart';
 import 'package:flutter_demo/pages/day20_article_app/article_list_page.dart';
+import 'package:flutter_demo/pages/day21_dio_demo/post_list_page.dart';
 import 'package:flutter_demo/theme/button_theme.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
@@ -133,6 +134,14 @@ class _MyHomePageState extends State<MyHomePage> {
             // wireframe for each widget.
             padding: const EdgeInsets.all(16),
             children: <Widget>[
+              SizedBox(height: 12),
+              CustomButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) {
+                      return PostListPage();
+                    }));
+                  },
+                  text: "Day 21 - 网络请求演示"),
               SizedBox(height: 12),
               CustomButton(
                   onPressed: () {
