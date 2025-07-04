@@ -8,7 +8,7 @@ import 'base_response.dart';
 
 class ApiClient {
   static final Dio _dio = Dio(BaseOptions(
-    baseUrl: 'https://example.com/api',
+    baseUrl: 'http://localhost:8080/api',
     connectTimeout: const Duration(seconds: 10),
     receiveTimeout: const Duration(seconds: 10),
   ))
