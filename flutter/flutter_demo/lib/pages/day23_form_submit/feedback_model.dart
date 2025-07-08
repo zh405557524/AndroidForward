@@ -1,8 +1,8 @@
 class FeedbackForm {
-  final String name;
+  final String userName;
   final String content;
 
-  FeedbackForm({required this.name, required this.content});
+  FeedbackForm({required this.userName, required this.content});
 
-  Map<String, dynamic> toJson() => {'name': name, 'content': content};
+  Map<String, dynamic> toJson() => {'name': userName, 'content': content};
 }

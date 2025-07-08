@@ -15,6 +15,7 @@ class FeedbackPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    controller.context= context;
     return Scaffold(
         appBar: AppBar(title: const Text("Day 23 -意见反馈")),
         body: Padding(
@@ -33,7 +34,7 @@ class FeedbackPage extends StatelessWidget {
                     ? null
                     : () {
                         final form =
-                            FeedbackForm(name: nameCtrl.text.trim(), content: contentCtrl.text.trim());
+                            FeedbackForm(userName: nameCtrl.text.trim(), content: contentCtrl.text.trim());
                         controller.submit(form);
                       },
                 child: controller.isSubmitting.value

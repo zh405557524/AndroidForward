@@ -21,7 +21,7 @@ class CustomButtonDemoPage extends StatelessWidget {
               CustomButton(
                 text: '默认按钮',
                 onPressed: () {
-                  ToastUtil.show('默认按钮点击');
+                  ToastUtil.show(context,'默认按钮点击');
                 },
               ),
               const SizedBox(height: 24),
@@ -33,7 +33,7 @@ class CustomButtonDemoPage extends StatelessWidget {
                 textColor: Colors.white,
                 borderRadius: 20,
                 onPressed: () {
-                  ToastUtil.show('绿色按钮点击');
+                  ToastUtil.show(context,'绿色按钮点击');
                 },
               )
             ])));

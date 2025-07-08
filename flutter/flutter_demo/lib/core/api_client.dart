@@ -22,7 +22,6 @@ class ApiClient {
       options.headers['Authorization'] = 'Bearer your_token';
       return handler.next(options); // continue
     }, onError: (e, handler) {
-      ToastUtil.show("网络错误:${e.message ?? "未知错误"}");
       return handler.next(e);
     }));
 
