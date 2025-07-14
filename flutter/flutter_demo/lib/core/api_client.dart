@@ -7,8 +7,10 @@ import 'package:get/get_core/src/get_main.dart';
 import 'base_response.dart';
 
 class ApiClient {
+  static var baseUrl = 'http://localhost:8080/api';
+
   static final Dio _dio = Dio(BaseOptions(
-    baseUrl: 'http://localhost:8080/api',
+    baseUrl: baseUrl,
     connectTimeout: const Duration(seconds: 10),
     receiveTimeout: const Duration(seconds: 10),
   ))
@@ -36,4 +38,5 @@ class ApiClient {
     final res = await _dio.post(path, data: data);
     return BaseResponse<T>.fromJson(res.data, fromJsonT);
   }
+
 }

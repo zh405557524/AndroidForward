@@ -17,6 +17,7 @@ import 'package:flutter_demo/pages/day20_article_app/article_list_page.dart';
 import 'package:flutter_demo/pages/day21_dio_demo/post_list_page.dart';
 import 'package:flutter_demo/pages/day22_api_wrapper/user_page.dart';
 import 'package:flutter_demo/pages/day23_form_submit/feedback_page.dart';
+import 'package:flutter_demo/pages/day24_upload/image_upload_page.dart';
 import 'package:flutter_demo/theme/button_theme.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
@@ -138,6 +139,14 @@ class _MyHomePageState extends State<MyHomePage> {
             padding: const EdgeInsets.all(16),
             children: <Widget>[
               SizedBox(height: 12),
+              CustomButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (_) {
+                      return ImageUploadPage();
+                    }));
+                  },
+                  text: "Day 24 - 图片上传"),
+      SizedBox(height: 12),
               CustomButton(
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (_) {
